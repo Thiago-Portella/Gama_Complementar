@@ -33,15 +33,15 @@ public class Livro {
 			System.out.printf("A página %d não existe. Tente buscar novamente.", busca);
 		} else {
 			this.paginaAtual = busca;
-			System.out.printf("Você está na página: %d.", this.paginaAtual);
+			System.out.printf("Você está na página: %d.\n", this.paginaAtual);
 		}
 	}
 
 	public void mostrarPagina() {
-		System.out.printf("Você está na página: %d.", this.paginaAtual);
+		System.out.printf("\nVocê está na página: %d.", this.paginaAtual);
 	}
 
 	public void mostrarDadosDoLivro() {
-		System.out.printf("Título do livro: %s|nAltor: %s|nVocê está na página %d de %d.", this.titulo, this.altor, this.paginaAtual, this.totalDePaginas);
+		System.out.printf("\nTítulo do livro: %s\nAltor: %s\nVocê está na página %d de %d.", this.titulo, this.altor, this.paginaAtual, this.totalDePaginas);
 	}
 }
