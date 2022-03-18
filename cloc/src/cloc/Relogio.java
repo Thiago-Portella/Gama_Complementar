@@ -1,35 +1,48 @@
 package cloc;
 
 public class Relogio {
-	private int hora;
+	private int horas;
 	private int minutos;
-	private int  segundos;
-	public Relogio(int hora, int minutos, int segundos) {
+	private int segundos;
+	
+	public Relogio(int horas, int minutos, int segundos) {
 		super();
-		this.hora = hora;
-		this.minutos = minutos;
-		this.segundos = segundos;
+		setHoras(horas);
+		setMinutos(minutos);
+		setSegundos(segundos);
 	}
-	public int getHora() {
-		return hora;
+	public int getHoras() {
+		return horas;
 	}
-	public void setHora(int hora) {
-		this.hora = hora;
+
+	public void setHoras(int horas) {
+		if (horas >= 0 && horas <=23) {
+			this.horas = horas;
+		}
 	}
+
 	public int getMinutos() {
 		return minutos;
 	}
+
 	public void setMinutos(int minutos) {
-		this.minutos = minutos;
+		if (minutos >= 0 && minutos <= 59) {
+			this.minutos = minutos;
+		}
 	}
+
+
 	public int getSegundos() {
 		return segundos;
 	}
+
 	public void setSegundos(int segundos) {
-		this.segundos = segundos;
+		if (segundos >= 0 && segundos <= 59) {
+			this.segundos = segundos;
+		}
 	}
-	
+
 	public void horaAtual() {
-		System.out.printf("São %d horas, %d minutos e %d segundos.", this.hora, this.minutos, this.segundos);
+		System.out.printf("São %d horas, %d minutos e %d segundos.", this.horas, this.minutos, this.segundos);
 	}
 }
