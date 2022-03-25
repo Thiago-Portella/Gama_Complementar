@@ -1,19 +1,24 @@
-package model;
+package main.model;
 
 public class ContaEspecial extends Conta {
+	private int tipo;
 	private double limite;
 	public ContaEspecial(int numero, double saldo, int tipo, double limite) {
-		super(numero, saldo, tipo);
+		super(numero, saldo);
+		this.tipo = tipo;
 		this.limite = limite;
 	}
 
+	public int getTipo() {
+		return tipo;
+	}
+
 	public boolean sacar(double sac) {
-		if (limite + super.getSaldo() > sac) {
-			return false;
-		} else {
-			super.sacar(sac);
-			return true;
+		if (sac <= limite + super.getSaldo()) {
+			boolean resultado = super.sacar(sac);
+			return resultado;
 		}
+		return false;
 	}
 
 	@Override

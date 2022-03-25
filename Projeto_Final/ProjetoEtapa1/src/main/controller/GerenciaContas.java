@@ -1,10 +1,10 @@
-package controller;
+package main.controller;
 
 import java.util.ArrayList;
 
-import model.Conta;
+import main.model.Conta;
 
-	public class GerenciaContas {
+public class GerenciaContas {
 	public ArrayList<Conta> contas;
 	
 	public GerenciaContas() {
@@ -12,8 +12,8 @@ import model.Conta;
 	}
 	
 	public boolean adicionarConta(Conta c) {
-		contas.add(c);
-		return true;
+		boolean resultado = contas.add(c);
+		return resultado;
 	}
 	
 	public String buscarConta(int numero) {
@@ -37,9 +37,9 @@ import model.Conta;
 	public boolean depositar(int numero, double deposito) {
 		for (int i = 0; i < contas.size(); i++) {
 			if (contas.get(i).getNumero() == numero) {
-				contas.get(i).depositar(deposito);
+				boolean resultado = contas.get(i).depositar(deposito);
+				return resultado;
 			}
-			
 		}
 		return false;
 	}
@@ -47,7 +47,8 @@ import model.Conta;
 	public boolean sacar(int numero, double sac) {
 		for (int i = 0; i < contas.size(); i++) {
 			if (contas.get(i).getNumero() == numero) {
-				contas.get(i).sacar(sac);
+				boolean resultado = contas.get(i).sacar(sac);
+				return resultado;
 			}
 		}
 		return false;

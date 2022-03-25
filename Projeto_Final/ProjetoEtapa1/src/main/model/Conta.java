@@ -1,33 +1,30 @@
-package model;
+package main.model;
 
 public abstract class Conta {
 	private int numero;
 	private double saldo;
-	private int tipo;	
-	public Conta(int numero, double saldo, int tipo) {
+	public Conta(int numero, double saldo) {
 		super();
 		this.numero = numero;
 		this.saldo = saldo;
-		this.tipo = tipo;
 	}
 
 	public boolean depositar(double deposito) {
-		if (deposito <= 0) {
-			return false;
-		} else {
+		if (deposito >= 1) {
 			this.saldo+= deposito;
 			return true;
 		}
+		return false;
 	}
 
 	public boolean sacar(double sac) {
-		if (sac <= 0) {
-			return false;
-		} else {
+		if (sac >= 1) {
 			this.saldo -= sac;
 			return true;
 		}
+		return false;
 	}
+
 	@Override
 	public String toString() {		
 		return numero + " - " + saldo;
@@ -38,9 +35,4 @@ public abstract class Conta {
 	public double getSaldo() {
 		return saldo;
 	}
-
-	public int getTipo() {
-		return tipo;
-	}
-
 }
