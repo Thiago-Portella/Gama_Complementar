@@ -1,13 +1,19 @@
 package com.gama.project.projetofinal.model;
 
-import org.springframework.data.annotation.Id;
-
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
-
+import jakarta.persistence.Id;
+@Entity
+@Tables
 public abstract class Conta {
-	protected int numero;
-	protected double saldo;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(table = "conta_corrente")
+	private int numero;
+	@Column(table = "conta_corrente")
+	private double saldo;
 	public Conta(int numero, double saldo) {
 		super();
 		this.numero = numero;
