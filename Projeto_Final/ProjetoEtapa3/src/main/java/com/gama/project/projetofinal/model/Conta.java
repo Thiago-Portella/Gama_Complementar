@@ -6,10 +6,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 
 public abstract class Conta {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int numero;
-	private double saldo;
+	protected int numero;
+	protected double saldo;
 	public Conta(int numero, double saldo) {
 		super();
 		this.numero = numero;
