@@ -5,8 +5,10 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
 @Entity
-@Tables
+@Table(name = "conta_corrente")
 public abstract class Conta {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
